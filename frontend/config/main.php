@@ -36,6 +36,13 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
+        'db' => [
+            'class' => 'yii\db\Connection',
+            'dsn' => 'mysql:host=localhost;dbname=frontend',
+            'username' => 'root',
+            'password' => 'root',
+            'charset' => 'utf8',
+        ],
     ],
     'params' => $params,
 ];
