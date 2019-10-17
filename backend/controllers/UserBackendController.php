@@ -8,6 +8,7 @@ use backend\models\UserSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use backend\models\SignUpForm;
 
 /**
  * UserBackendController implements the CRUD actions for UserBackend model.
@@ -123,5 +124,18 @@ class UserBackendController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+
+    /**
+     * 注册
+     */
+    public function actionSignUp(){
+        $model=new SignUpForm();
+        if($model->load(Yii::$app->request->post())&&$model->signUp()){
+            return $this->redirect('index');
+        }
+        return $this->render('create',[
+            'model'=>$model
+        ]);
     }
 }
