@@ -7,7 +7,7 @@ use yii\widgets\Pjax;
 /* @var $searchModel backend\models\UserSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'User Backends';
+$this->title = '后台用户';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-backend-index">
@@ -15,27 +15,24 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create User Backend', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('创建用户', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php Pjax::begin(); ?>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <?php  echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
             'id',
             'username',
-            'auth_key',
-            'password_hash',
+//            'auth_key',
+//            'password_hash',
             'email:email',
             //'status',
-            //'created_at',
             //'updated_at',
-
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
