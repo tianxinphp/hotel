@@ -62,4 +62,17 @@ class SignUpForm extends Model
         $userModel->generateAuthKey();
         return $userModel->save(false);
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function attributeLabels()
+    {
+        return [
+            'username' => '用户名',
+            'email' => '邮箱',
+            'password'=>'密码',
+            'status' => '状态',
+        ];
+    }
 }
