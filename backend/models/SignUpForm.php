@@ -29,7 +29,7 @@ class SignUpForm extends Model
     {
         return [
             ['username','filter','filter'=>'trim'],
-            ['username','required','message'=>'用户名不能为空'].
+            ['username','required','message'=>'用户名不能为空'],
             ['username','unique','targetClass'=>'backend\models\UserBackend','message'=>'用户名重复'],
             ['username','string','max'=>20,'tooLong'=>'最大20位'],
             ['email','filter','filter'=>'trim'],
