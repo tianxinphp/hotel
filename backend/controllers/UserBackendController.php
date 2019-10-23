@@ -24,14 +24,14 @@ class UserBackendController extends Controller
         return [
             'access'=>[
                 'class'=>AccessControl::class,
+                'denyCallback'=>function($rule, $action){
+                    return $this->redirect('http://www.baidu.com');
+                },
                 'rules'=>[
                     [
                         'actions'=>['index'],
                         'allow'=>true,
                         'roles'=>['@'],
-                        'denyCallback'=>function($rule, $action){
-                            return $this->redirect('http://www.baidu.com');
-                        },
                     ]
                 ]
             ],
