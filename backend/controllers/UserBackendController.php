@@ -24,12 +24,14 @@ class UserBackendController extends Controller
         return [
             'access'=>[
                 'class'=>AccessControl::class,
-                'actions'=>['index','view','create','update','delete','sign-up'],
-                'allow'=>true,
-                'roles'=>['@'],
-                'denyCallBack'=>function (){
-                    return $this->redirect('site/login');
-                }
+                'rules'=>[
+                    'actions'=>['index','view','create','update','delete','sign-up'],
+                    'allow'=>true,
+                    'roles'=>['@'],
+//                    'denyCallBack'=>function (){
+//                        return $this->redirect('site/login');
+//                    }
+                ]
             ],
             'verbs' => [
                 'class' => VerbFilter::class,
