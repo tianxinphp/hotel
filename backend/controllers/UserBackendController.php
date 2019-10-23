@@ -29,7 +29,9 @@ class UserBackendController extends Controller
                         'actions'=>['index'],
                         'allow'=>true,
                         'roles'=>['@'],
-                        'ips'=>['192.168.1.244'],
+                        'denyCallback'=>function(){
+                            return $this->redirect('http://www.baidu.com');
+                        },
                     ]
                 ]
             ],
