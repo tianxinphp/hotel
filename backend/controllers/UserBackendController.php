@@ -30,12 +30,12 @@ class UserBackendController extends Controller
                     'roles'=>['@'],
                 ]
             ],
-            'verbs' => [
-                'class' => VerbFilter::class,
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
+//            'verbs' => [
+//                'class' => VerbFilter::class,
+//                'actions' => [
+//                    'delete' => ['POST'],
+//                ],
+//            ],
         ];
     }
 
