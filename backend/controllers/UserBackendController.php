@@ -26,9 +26,9 @@ class UserBackendController extends Controller
                 'class'=>AccessControl::class,
                 'rules'=>[
                     [
-                        'actions'=>['index','view','create','update','delete','sign-up'],
+                        'actions'=>['index'],
                         'allow'=>true,
-                        'roles'=>['@'],
+                        'roles'=>['?'],
                     ]
                 ]
             ],
