@@ -28,9 +28,6 @@ class UserBackendController extends Controller
                     'actions'=>['index','view','create','update','delete','sign-up'],
                     'allow'=>true,
                     'roles'=>['@'],
-//                    'denyCallBack'=>function (){
-//                        return $this->redirect('site/login');
-//                    }
                 ]
             ],
             'verbs' => [
