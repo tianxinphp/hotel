@@ -26,25 +26,16 @@ class UserBackendController extends Controller
                 'class'=>AccessControl::class,
                 'actions'=>['index','view','create','update','delete','sign-up'],
                 'allow'=>true,
-                'roles'=>['@']
+                'roles'=>['@'],
+                'denyCallBack'=>function (){
+                    return $this->redirect('site/login');
+                }
             ],
             'verbs' => [
                 'class' => VerbFilter::class,
                 'actions' => [
                     'delete' => ['POST'],
                 ],
-            ],
-        ];
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function actions()
-    {
-        return [
-            'error' => [
-                'class' => 'yii\web\ErrorAction',
             ],
         ];
     }
