@@ -29,7 +29,7 @@ class UserBackendController extends Controller
                         'actions'=>['index'],
                         'allow'=>true,
                         'roles'=>['@'],
-                        'denyCallback'=>function(){
+                        'denyCallback'=>function($rule, $action){
                             return $this->redirect('http://www.baidu.com');
                         },
                     ]
