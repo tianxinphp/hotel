@@ -38,6 +38,18 @@ class UserBackendController extends Controller
     }
 
     /**
+     * {@inheritdoc}
+     */
+    public function actions()
+    {
+        return [
+            'error' => [
+                'class' => 'yii\web\ErrorAction',
+            ],
+        ];
+    }
+
+    /**
      * Lists all UserBackend models.
      * @return mixed
      */
