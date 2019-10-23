@@ -28,7 +28,7 @@ class UserBackendController extends Controller
                     [
                         'actions'=>['index'],
                         'allow'=>true,
-                        'roles'=>['?'],
+//                        'roles'=>['?'],
                     ]
                 ]
             ],
