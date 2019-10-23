@@ -9,6 +9,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use backend\models\SignUpForm;
+use yii\filters\AccessControl;
 
 /**
  * UserBackendController implements the CRUD actions for UserBackend model.
@@ -21,8 +22,14 @@ class UserBackendController extends Controller
     public function behaviors()
     {
         return [
+            'access'=>[
+                'class'=>AccessControl::class,
+                'actions'=>['index','view','create','update','delete','sign-up'],
+                'allow'=>true,
+                'roles'=>['@']
+            ],
             'verbs' => [
-                'class' => VerbFilter::className(),
+                'class' => VerbFilter::class,
                 'actions' => [
                     'delete' => ['POST'],
                 ],
