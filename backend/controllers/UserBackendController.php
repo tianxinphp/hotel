@@ -25,17 +25,17 @@ class UserBackendController extends Controller
             'access'=>[
                 'class'=>AccessControl::class,
                 'rules'=>[
-                    'actions'=>['index','view','create','update','delete','sign-up'],
+                    'actions'=>['index'],
                     'allow'=>true,
                     'roles'=>['@'],
                 ]
             ],
-//            'verbs' => [
-//                'class' => VerbFilter::class,
-//                'actions' => [
-//                    'delete' => ['POST'],
-//                ],
-//            ],
+            'verbs' => [
+                'class' => VerbFilter::class,
+                'actions' => [
+                    'delete' => ['POST'],
+                ],
+            ],
         ];
     }
 
