@@ -15,5 +15,8 @@ return [
             'rules' => [
             ],
         ],
+        'authManager'=>[
+            'class'=>'yii\rbac\DbManager'
+        ]
     ],
 ];
