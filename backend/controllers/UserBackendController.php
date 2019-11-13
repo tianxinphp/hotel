@@ -44,7 +44,7 @@ class UserBackendController extends Controller
 
     public function beforeAction($action)
     {
-        if(Yii::$app->user->can($this->route)){
+        if(!Yii::$app->user->can($this->route)){
             throw new ForbiddenHttpException('没权限'.$this->route);
         }
     }
