@@ -11,6 +11,7 @@ use yii\web\ForbiddenHttpException;
 use yii\filters\VerbFilter;
 use backend\models\SignUpForm;
 use yii\filters\AccessControl;
+use common\behaviors\UserBehaviors;
 
 /**
  * UserBackendController implements the CRUD actions for UserBackend model.
@@ -23,6 +24,7 @@ class UserBackendController extends Controller
     public function behaviors()
     {
         return [
+            'userBehaviors'=>UserBehaviors::class,
             'access'=>[
                 'class'=>AccessControl::class,
                 'rules'=>[
@@ -40,13 +42,6 @@ class UserBackendController extends Controller
                 ],
             ],
         ];
-    }
-
-    public function beforeAction($action)
-    {
-        if(!Yii::$app->user->can($this->route)){
-            throw new ForbiddenHttpException('没权限'.$this->route);
-        }
     }
 
     /**
