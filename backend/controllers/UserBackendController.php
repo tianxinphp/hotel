@@ -7,6 +7,7 @@ use backend\models\UserBackend;
 use backend\models\UserSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
+use yii\web\ForbiddenHttpException;
 use yii\filters\VerbFilter;
 use backend\models\SignUpForm;
 use yii\filters\AccessControl;
@@ -47,6 +48,10 @@ class UserBackendController extends Controller
      */
     public function actionIndex()
     {
+        if(!Yii::$app->user->can($this->route)){
+            throw new ForbiddenHttpException('无权限');
+        }
+
         $searchModel = new UserSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
