@@ -8,6 +8,7 @@
 
 namespace common\behaviors;
 use Yii;
+use yii\base\ActionFilter;
 use yii\base\Behavior;
 use yii\web\ForbiddenHttpException;
 
