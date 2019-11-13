@@ -50,10 +50,7 @@ class UserBackendController extends Controller
      */
     public function actionIndex()
     {
-        $userBehaviors=$this->getBehavior('userBehaviors');
-        $userBehaviors->isCan();
-
-
+        $this->isCan();
         $searchModel = new UserSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
