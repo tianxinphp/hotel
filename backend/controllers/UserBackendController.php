@@ -30,7 +30,7 @@ class UserBackendController extends Controller
                 'rules'=>[
                     [
                         'actions'=>['index','view','create','update','delete','sign-up'],
-                        'allow'=>true,
+                        'allow'=>false,
                         'roles'=>['@'],
                     ]
                 ]
