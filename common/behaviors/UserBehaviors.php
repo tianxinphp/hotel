@@ -7,9 +7,9 @@
  */
 
 namespace common\behaviors;
-use yii\base\Behavior;
+use yii\base\ActionFilter;
 
-class UserBehaviors extends Behavior
+class UserBehaviors extends ActionFilter
 {
     public function beforeAction($action){
         var_dump(111);
