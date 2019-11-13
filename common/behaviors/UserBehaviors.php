@@ -8,14 +8,15 @@
 
 namespace common\behaviors;
 use Yii;
-use yii\base\ActionFilter;
+use yii\base\Behavior;
 use yii\web\ForbiddenHttpException;
-class UserBehaviors extends ActionFilter
+
+class UserBehaviors extends Behavior
 {
-    public function beforeAction($action){
-        $currentRequestRoute = $action->getUniqueId();
-        if(!Yii::$app->user->can($currentRequestRoute)){
-            throw new ForbiddenHttpException($currentRequestRoute);
+    public function  isCan(){
+        $baseUrl=Yii::$app->request->baseUrl;
+        if(!Yii::$app->user->can($baseUrl)){
+            throw new ForbiddenHttpException($baseUrl);
         }
     }
 }
