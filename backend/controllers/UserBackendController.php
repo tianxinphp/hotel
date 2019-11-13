@@ -48,10 +48,6 @@ class UserBackendController extends Controller
      */
     public function actionIndex()
     {
-        if(!Yii::$app->user->can($this->route)){
-            throw new ForbiddenHttpException('无权限'.$this->route);
-        }
-
         $searchModel = new UserSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
