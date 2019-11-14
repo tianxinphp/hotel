@@ -20,11 +20,23 @@ class UserBehaviors extends ActionFilter
         $userId=Yii::$app->getUser()->id;
         $routes=[];
         $authManager=Yii::$app->getAuthManager();
-        print_r($authManager->getPermissionsByUser($userId));
+        foreach ($authManager->getPermissionsByUser($userId) as $userName=> $value){
+            if($userName[0]==='/'){
+                $routes[]=$userName;
+            }
+        }
+        // 判断当前用户是否有权限访问正在请求的路由
+        if (in_array($routeId, $routes)) {
+            return true;
+        }
+        $this->denyAccess(Yii::$app->getUser());
+    }
 
-
-//        foreach ($authManager->getPermissionsByUser($userId) as $userName=> $value){
-//
-//        }
+    protected function denyAccess($user){
+        if ($user->getIsGuest()) {
+            $user->loginRequired();
+        } else {
+            throw new ForbiddenHttpException('不允许访问.');
+        }
     }
 }
