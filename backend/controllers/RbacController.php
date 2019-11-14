@@ -25,6 +25,7 @@ class RbacController extends Controller
             $userRole=$auth->createRole('用户管理');
             $auth->add($userRole);
             $auth->addChild($userRole,$userIndex);
+            $auth->assign($userRole,1);
         }else{
             $userRole=$auth->getRole('用户管理');
         }
@@ -41,7 +42,6 @@ class RbacController extends Controller
         $auth->addChild($userRole,$userUpdate);
         $auth->addChild($userRole,$userDelete);
         //权限分配
-        $auth->assign($userRole,1);
         return $this->redirect('/site/index');
     }
 }
