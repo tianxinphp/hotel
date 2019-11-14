@@ -20,6 +20,7 @@ class UserBehaviors extends ActionFilter
         $userId=Yii::$app->getUser()->id;
         $routes=[];
         $authManager=Yii::$app->getAuthManager();
+        print_r($authManager);
         foreach ($authManager->getPermissionsByUser($userId) as $userName=> $value){
             if($userName[0]==='/'){
                 $routes[]=$userName;
