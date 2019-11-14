@@ -12,12 +12,19 @@ use yii\base\ActionFilter;
 use yii\base\Behavior;
 use yii\web\ForbiddenHttpException;
 
-class UserBehaviors extends Behavior
+class UserBehaviors extends ActionFilter
 {
-    public function  isCan(){
-        $baseUrl=Yii::$app->request->baseUrl;
-        if(!Yii::$app->user->can($baseUrl)){
-            throw new ForbiddenHttpException($baseUrl);
-        }
+    public function beforeAction($action)
+    {
+        $routeId='/'.$action->getUniqueId();
+        $userId=Yii::$app->getUser()->id;
+        $routes=[];
+        $authManager=Yii::$app->authManager;
+        print_r($authManager->getPermissionsByUser($userId));
+
+
+//        foreach ($authManager->getPermissionsByUser($userId) as $userName=> $value){
+//
+//        }
     }
 }
