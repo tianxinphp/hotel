@@ -21,10 +21,22 @@ class RbacController extends Controller
         $userIndex=$auth->createPermission('/user-backend/index');
         $userIndex->description='用户列表页';
         $auth->add($userIndex);
+        $userCreate=$auth->createPermission('/user-backend/create');
+        $userCreate->description='用户创建页';
+        $auth->add($userCreate);
+        $userUpdate=$auth->createPermission('/user-backend/update');
+        $userUpdate->description='用户修改页';
+        $auth->add($userUpdate);
+        $userDelete=$auth->createPermission('/user-backend/delete');
+        $userDelete->description='用户删除页';
+        $auth->add($userDelete);
         //角色
         $userRole=$auth->createRole('用户管理');
         $auth->add($userRole);
         $auth->addChild($userRole,$userIndex);
+        $auth->addChild($userRole,$userCreate);
+        $auth->addChild($userRole,$userUpdate);
+        $auth->addChild($userRole,$userDelete);
         //权限分配
         $auth->assign($userRole,1);
     }
