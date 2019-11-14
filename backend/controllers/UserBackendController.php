@@ -24,9 +24,9 @@ class UserBackendController extends Controller
     public function behaviors()
     {
         return [
-            'userBehaviors'=>[
-                'class'=>UserBehaviors::class,
-            ],
+//            'userBehaviors'=>[
+//                'class'=>UserBehaviors::class,
+//            ],
             'access'=>[
                 'class'=>AccessControl::class,
                 'rules'=>[

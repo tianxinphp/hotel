@@ -1,8 +1,14 @@
 <?php
 return [
+    'modules'=>[
+        'admin'=>[
+            'class'=>'mdm\admin\Module'
+        ],
+    ],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
+        '@mdm'   => '@vendor/mdmsoft/yii2-admin'
     ],
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'components' => [
@@ -16,7 +22,14 @@ return [
             ],
         ],
         'authManager'=>[
-            'class'=>'yii\rbac\DbManager'
-        ]
+            'class'=>'yii\rbac\DbManager',
+            'defaultRoles'=>['guest']
+        ],
     ],
+    'as access'=>[
+        'class'=>'mdm\admin\components\AccessControl',
+        'allowAction'=>[
+
+        ],
+    ]
 ];
