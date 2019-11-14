@@ -19,7 +19,7 @@ class UserBehaviors extends ActionFilter
         $routeId='/'.$action->getUniqueId();
         $userId=Yii::$app->getUser()->id;
         $routes=[];
-        $authManager=Yii::$app->authManager;
+        $authManager=Yii::$app->getAuthManager();
         print_r($authManager->getPermissionsByUser($userId));
 
 
