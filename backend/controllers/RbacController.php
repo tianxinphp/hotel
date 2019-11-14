@@ -18,9 +18,16 @@ class RbacController extends Controller
         //权限组件
         $auth=Yii::$app->authManager;
         //添加权限
-        $userIndex=$auth->createPermission('/user-backend/index');
-        $userIndex->description='用户列表页';
-        $auth->add($userIndex);
+        if(!$auth->getPermission('/user-backend/index')){
+            $userIndex=$auth->createPermission('/user-backend/index');
+            $userIndex->description='用户列表页';
+            $auth->add($userIndex);
+            $userRole=$auth->createRole('用户管理');
+            $auth->add($userRole);
+            $auth->addChild($userRole,$userIndex);
+        }else{
+            $userRole=$auth->getRole('用户管理');
+        }
         $userCreate=$auth->createPermission('/user-backend/create');
         $userCreate->description='用户创建页';
         $auth->add($userCreate);
@@ -30,10 +37,6 @@ class RbacController extends Controller
         $userDelete=$auth->createPermission('/user-backend/delete');
         $userDelete->description='用户删除页';
         $auth->add($userDelete);
-        //角色
-        $userRole=$auth->createRole('用户管理');
-        $auth->add($userRole);
-        $auth->addChild($userRole,$userIndex);
         $auth->addChild($userRole,$userCreate);
         $auth->addChild($userRole,$userUpdate);
         $auth->addChild($userRole,$userDelete);
