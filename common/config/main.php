@@ -8,7 +8,7 @@ return [
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
-        '@mdm'   => '@vendor/mdmsoft/yii2-admin'
+        '@mdm/admin'   => '@vendor/mdmsoft/yii2-admin'
     ],
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'components' => [
@@ -29,7 +29,7 @@ return [
     'as access'=>[
         'class'=>'mdm\admin\components\AccessControl',
         'allowAction'=>[
-            '*'
+//            '*'
         ],
     ]
 ];
