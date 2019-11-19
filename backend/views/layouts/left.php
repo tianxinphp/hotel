@@ -36,6 +36,17 @@
                     ['label' =>'User Backend','icon'=>'user','url'=>['/user-backend']],
                     ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
                     [
+                      'lable'=>'权限',
+                      'icon'=>'list',
+                      'url'=>'#',
+                      'items'=>[
+                          ['label'=>'路由','icon'=>'list-ul','url'=>['/admin/route']],
+                          ['label'=>'权限菜单','icon'=>'list-ul','url'=>['/admin/permission']],
+                          ['label'=>'角色','icon'=>'list-ul','url'=>['/admin/role']],
+                          ['label'=>'角色分配','icon'=>'list-ul','url'=>['/admin/assignment']],
+                      ]
+                    ],
+                    [
                         'label' => 'Some tools',
                         'icon' => 'share',
                         'url' => '#',
