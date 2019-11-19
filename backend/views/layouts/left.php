@@ -36,7 +36,7 @@
                     ['label' =>'User Backend','icon'=>'user','url'=>['/user-backend']],
                     ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
                     [
-                      'lable'=>'权限',
+                      'label'=>'权限',
                       'icon'=>'list',
                       'url'=>'#',
                       'items'=>[
