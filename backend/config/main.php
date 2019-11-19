@@ -19,7 +19,13 @@ return [
         'debug'=>[
             'class'=>'yii\debug\Module',
             'allowedIPs'=>['127.0.0.1', '::1','101.95.166.54']
+        ],
+        'admin'=>[
+            'class'=>'mdm\admin\Module'
         ]
+    ],
+    'aliases'=>[
+        '@mdm/admin'   => '@vendor/mdmsoft/yii2-admin'
     ],
     'components' => [
         'request' => [
@@ -46,6 +52,15 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
+        'authManager'=>[
+            'class'=>'yii\rbac\DbManager',
+        ],
+        'as access'=>[
+            'class'=>'mdm\admin\components\AccessControl',
+            'allowAction'=>[
+//            '*'
+            ],
+        ]
     ],
     'params' => $params,
 ];
