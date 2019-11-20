@@ -47,8 +47,6 @@ class UserBackendController extends Controller
      */
     public function actionIndex()
     {
-        $backtrace = debug_backtrace();
-        var_dump($backtrace);
         $searchModel = new UserSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
