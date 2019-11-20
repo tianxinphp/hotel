@@ -7,11 +7,9 @@ use backend\models\UserBackend;
 use backend\models\UserSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\web\ForbiddenHttpException;
 use yii\filters\VerbFilter;
 use backend\models\SignUpForm;
 use yii\filters\AccessControl;
-use common\behaviors\UserBehaviors;
 
 /**
  * UserBackendController implements the CRUD actions for UserBackend model.
@@ -24,9 +22,6 @@ class UserBackendController extends Controller
     public function behaviors()
     {
         return [
-//            'userBehaviors'=>[
-//                'class'=>UserBehaviors::class,
-//            ],
             'access'=>[
                 'class'=>AccessControl::class,
                 'rules'=>[
@@ -52,6 +47,8 @@ class UserBackendController extends Controller
      */
     public function actionIndex()
     {
+        $backtrace = debug_backtrace();
+        var_dump($backtrace);
         $searchModel = new UserSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
