@@ -54,6 +54,7 @@ return [
         ],
         'authManager'=>[
             'class'=>'yii\rbac\DbManager',
+            'defaultRoles' => ['guest'],
         ],
         'as access'=>[
             'class'=>'mdm\admin\components\AccessControl',
