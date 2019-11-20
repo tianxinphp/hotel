@@ -22,16 +22,16 @@ class UserBackendController extends Controller
     public function behaviors()
     {
         return [
-            'access'=>[
-                'class'=>AccessControl::class,
-                'rules'=>[
-                    [
-                        'actions'=>['index','view','create','update','delete','sign-up'],
-                        'allow'=>true,
-                        'roles'=>['@'],
-                    ]
-                ]
-            ],
+//            'access'=>[
+//                'class'=>AccessControl::class,
+//                'rules'=>[
+//                    [
+//                        'actions'=>['index','view','create','update','delete','sign-up'],
+//                        'allow'=>true,
+//                        'roles'=>['@'],
+//                    ]
+//                ]
+//            ],
             'verbs' => [
                 'class' => VerbFilter::class,
                 'actions' => [
