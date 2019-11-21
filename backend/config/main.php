@@ -60,7 +60,7 @@ return [
     'as access'=>[
         'class'=>'mdm\admin\components\AccessControl',
         'allowActions'=>[
-
+            '/site/logout',
         ],
     ],
     'params' => $params,
