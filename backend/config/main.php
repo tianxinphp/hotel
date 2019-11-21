@@ -57,11 +57,11 @@ return [
             'defaultRoles' => ['guest'],
         ],
     ],
-//    'as access'=>[
-//        'class'=>'mdm\admin\components\AccessControl',
-//        'allowAction'=>[
-//
-//        ],
-//    ],
+    'as access'=>[
+        'class'=>'mdm\admin\components\AccessControl',
+        'allowActions'=>[
+
+        ],
+    ],
     'params' => $params,
 ];
