@@ -67,7 +67,8 @@ class DictionaryItemController extends Controller
         $model = new DictionaryItem();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+//            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect('index');
         }
 
         return $this->renderAjax('create', [
@@ -87,7 +88,8 @@ class DictionaryItemController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+//            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect('index');
         }
 
         return $this->renderAjax('update', [
