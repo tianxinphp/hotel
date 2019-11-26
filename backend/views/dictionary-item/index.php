@@ -79,7 +79,7 @@ $this->params['breadcrumbs'][] = $this->title;
     });
     $('.btn-update').on('click',function() {
         $(".modal-title").html('修改字典项');
-        $.get('{$requestUpdateUrl},',{ id: $(this).closest('tr').data('key')},function(data) {
+        $.get('{$requestUpdateUrl}',{ id: $(this).closest('tr').data('key')},function(data) {
             $('.modal-body').html(data);
         });
     });
