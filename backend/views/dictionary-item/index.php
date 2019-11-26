@@ -43,6 +43,11 @@ $this->params['breadcrumbs'][] = $this->title;
         'header' => '<h4 class="modal-title"></h4>',
     ]);
     Modal::end();
+    $js = <<<JS
+    console.log(window);
+JS;
+    $this->registerJs($js);
+
     ?>
 
 </div>
