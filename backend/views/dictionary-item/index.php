@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
 use yii\bootstrap\Modal;
+use yii\helpers\Url;
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\DictionaryItemSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -43,8 +44,14 @@ $this->params['breadcrumbs'][] = $this->title;
         'header' => '<h4 class="modal-title"></h4>',
     ]);
     Modal::end();
+    $requestUrl=Url::toRoute('create');
     $js = <<<JS
-    console.log(window);
+    $('#create').on('click',function() {
+        $(".modal-title").html('创建字典项');
+        $.get('{$requestCreateUrl}',function(data) {
+            $('.modal-body').html(data);
+        });
+    });
 JS;
     $this->registerJs($js);
 
