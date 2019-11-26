@@ -48,7 +48,7 @@ $this->params['breadcrumbs'][] = $this->title;
     $js = <<<JS
     $('#create').on('click',function() {
         $(".modal-title").html('创建字典项');
-        $.get('{$requestCreateUrl}',function(data) {
+        $.get('{$requestUrl}',function(data) {
             $('.modal-body').html(data);
         });
     });
