@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
+use yii\bootstrap\Modal;
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\DictionaryItemSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -15,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Dictionary Item', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Dictionary Item', ['create'], ['class' => 'btn btn-success','id'=>'create','data-toggle'=>'modal','data-target'=>'#operate-modal']) ?>
     </p>
 
     <?php Pjax::begin(); ?>
@@ -35,5 +36,13 @@ $this->params['breadcrumbs'][] = $this->title;
     ]); ?>
 
     <?php Pjax::end(); ?>
+
+    <?php
+    Modal::begin([
+        'id' => 'operate-modal',
+        'header' => '<h4 class="modal-title"></h4>',
+    ]);
+    Modal::end();
+    ?>
 
 </div>
