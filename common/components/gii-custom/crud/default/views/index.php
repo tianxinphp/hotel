@@ -93,7 +93,7 @@ if (($tableSchema = $generator->getTableSchema()) === false) {
                             'data-target' => '#operate-modal',
                         ]);
                     },
-                    'update'=>function($url, $model, $key){
+                    'delete'=>function($url, $model, $key){
                         return Html::a("删除", $url, [
                             'title' => '删除',
                             'class' => 'btn btn-default btn-delete',
