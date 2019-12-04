@@ -6,7 +6,7 @@
  * Time: 16:15
  */
 
-namespace common\components\theme\ThemeControl;
+namespace common\components\ThemeControl;
 use yii\base\ActionFilter;
 use Yii;
 
