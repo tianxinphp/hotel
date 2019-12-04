@@ -64,6 +64,9 @@ return [
             'class'=>'yii\rbac\DbManager',
             'defaultRoles' => ['guest'],
         ],
+        'as theme'=>[
+            'class' => '@common\components\theme\ThemeControl',
+        ]
     ],
     'as access'=>[
         'class'=>'mdm\admin\components\AccessControl',
