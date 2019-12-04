@@ -14,7 +14,15 @@ return [
     'modules' => [
         'gii'=>[
             'class'=>'yii\gii\Module',
-            'allowedIPs'=>['127.0.0.1', '::1','101.95.166.54']
+            'allowedIPs'=>['127.0.0.1', '::1','101.95.166.54'],
+            'generators'=>[
+                'curd'=>[
+                    'class'=>'yii\gii\generators\crud\Generator',
+                    'templates'=>[
+                        'myCurd'=>'@common/components/gii-custom/crud/default',
+                    ]
+                ]
+            ]
         ],
         'debug'=>[
             'class'=>'yii\debug\Module',
