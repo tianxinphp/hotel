@@ -16,7 +16,7 @@ return [
             'class'=>'yii\gii\Module',
             'allowedIPs'=>['127.0.0.1', '::1','101.95.166.54'],
             'generators'=>[
-                'curd'=>[
+                'crud'=>[
                     'class'=>'yii\gii\generators\crud\Generator',
                     'templates'=>[
                         'myCurd'=>'@common/components/gii-custom/crud/default',
