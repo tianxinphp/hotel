@@ -71,7 +71,7 @@ return [
         ],
     ],
     'as theme'=>[
-        'class' => '@common\components\ThemeControl',
+        'class' => 'common\components\ThemeControl',
     ],
     'params' => $params,
 ];
