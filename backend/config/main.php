@@ -5,12 +5,12 @@ $params = array_merge(
     require __DIR__ . '/params.php',
     require __DIR__ . '/params-local.php'
 );
-
+exit();
 return [
     'id' => 'app-backend',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
-    'bootstrap' => ['gii'],
+    'bootstrap' => ['log','gii','debug'],
     'timeZone' => 'PRC',
     'modules' => [
         'gii'=>[
@@ -25,10 +25,10 @@ return [
                 ]
             ]
         ],
-//        'debug'=>[
-//            'class'=>'yii\debug\Module',
-//            'allowedIPs'=>['127.0.0.1', '::1','101.95.166.54']
-//        ],
+        'debug'=>[
+            'class'=>'yii\debug\Module',
+            'allowedIPs'=>['127.0.0.1', '::1','101.95.166.54']
+        ],
         'admin'=>[
             'class'=>'mdm\admin\Module'
         ]
