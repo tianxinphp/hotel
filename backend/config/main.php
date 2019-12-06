@@ -11,6 +11,7 @@ return [
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log','gii','debug'],
+    'timeZone' => 'PRC',
     'modules' => [
         'gii'=>[
             'class'=>'yii\gii\Module',
