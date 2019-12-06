@@ -5,29 +5,31 @@ $params = array_merge(
     require __DIR__ . '/params.php',
     require __DIR__ . '/params-local.php'
 );
+
+echo Yii::getAlias('@app');
 return [
     'id' => 'app-backend',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
-//    'bootstrap' => ['log','gii','debug'],
+    'bootstrap' => ['log','gii','debug'],
     'timeZone' => 'PRC',
     'modules' => [
-//        'gii'=>[
-//            'class'=>'yii\gii\Module',
-//            'allowedIPs'=>['127.0.0.1', '::1','101.95.166.54'],
-//            'generators'=>[
-//                'crud'=>[
-//                    'class'=>'yii\gii\generators\crud\Generator',
-//                    'templates'=>[
-//                        'myCurd'=>'@common/components/gii-custom/crud/default',
-//                    ]
-//                ]
-//            ]
-//        ],
-//        'debug'=>[
-//            'class'=>'yii\debug\Module',
-//            'allowedIPs'=>['127.0.0.1', '::1','101.95.166.54']
-//        ],
+        'gii'=>[
+            'class'=>'yii\gii\Module',
+            'allowedIPs'=>['127.0.0.1', '::1','101.95.166.54'],
+            'generators'=>[
+                'crud'=>[
+                    'class'=>'yii\gii\generators\crud\Generator',
+                    'templates'=>[
+                        'myCurd'=>'@common/components/gii-custom/crud/default',
+                    ]
+                ]
+            ]
+        ],
+        'debug'=>[
+            'class'=>'yii\debug\Module',
+            'allowedIPs'=>['127.0.0.1', '::1','101.95.166.54']
+        ],
         'admin'=>[
             'class'=>'mdm\admin\Module'
         ]
@@ -48,15 +50,15 @@ return [
             // this is the name of the session cookie used for login on the backend
             'name' => 'advanced-backend',
         ],
-//        'log' => [
-//            'traceLevel' => YII_DEBUG ? 3 : 0,
-//            'targets' => [
-//                [
-//                    'class' => 'yii\log\FileTarget',
-//                    'levels' => ['error', 'warning'],
-//                ],
-//            ],
-//        ],
+        'log' => [
+            'traceLevel' => YII_DEBUG ? 3 : 0,
+            'targets' => [
+                [
+                    'class' => 'yii\log\FileTarget',
+                    'levels' => ['error', 'warning'],
+                ],
+            ],
+        ],
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
