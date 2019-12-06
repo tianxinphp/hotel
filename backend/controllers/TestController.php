@@ -9,7 +9,6 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\helpers\Url;
-use common\components\ThemeControl;
 /**
  * TestController implements the CRUD actions for Test model.
  */
@@ -21,7 +20,6 @@ class TestController extends Controller
     public function behaviors()
     {
         return [
-            'themes'=>ThemeControl::class,
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
