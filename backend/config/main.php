@@ -71,8 +71,8 @@ return [
         'allowActions'=>[
         ],
     ],
-//    'as theme'=>[
-//        'class' => 'common\components\ThemeControl',
-//    ],
+    'as theme'=>[
+        'class' => 'backend\components\ThemeControl',
+    ],
     'params' => $params,
 ];
