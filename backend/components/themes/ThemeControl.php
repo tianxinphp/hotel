@@ -18,6 +18,8 @@ class ThemeControl extends ActionFilter
         $theme = $switch ? 'spring' : 'christmas';
         Yii::$app->view->theme=Yii::createObject([
             'class' => 'yii\base\Theme',
+            'basePath' => "@app/themes/{$theme}",
+            'baseUrl' => "@web/themes/{$theme}",
             'pathMap' => [
                 '@app/views' => [
                     "@app/themes/{$theme}",
