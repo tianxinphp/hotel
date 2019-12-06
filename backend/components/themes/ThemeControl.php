@@ -6,7 +6,7 @@
  * Time: 16:15
  */
 
-namespace common\components;
+namespace backend\components;
 use yii\base\ActionFilter;
 use Yii;
 
