@@ -14,6 +14,8 @@ class ThemeControl extends ActionFilter
 {
     public function init()
     {
+        print_r(Yii::getAlias('@app'));
+        exit();
         $switch=intval(Yii::$app->request->get('switch'));
         $theme = $switch ? 'spring' : 'christmas';
         Yii::$app->view->theme=Yii::createObject([
