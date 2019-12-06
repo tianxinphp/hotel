@@ -6,8 +6,6 @@ $params = array_merge(
     require __DIR__ . '/params-local.php'
 );
 
-echo Yii::getAlias('@app');
-exit();
 return [
     'id' => 'app-backend',
     'basePath' => dirname(__DIR__),
