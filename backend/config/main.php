@@ -10,7 +10,7 @@ return [
     'id' => 'app-backend',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
-    'bootstrap' => ['log','gii'],
+    'bootstrap' => ['gii'],
     'timeZone' => 'PRC',
     'modules' => [
         'gii'=>[
@@ -25,10 +25,10 @@ return [
                 ]
             ]
         ],
-        'debug'=>[
-            'class'=>'yii\debug\Module',
-            'allowedIPs'=>['127.0.0.1', '::1','101.95.166.54']
-        ],
+//        'debug'=>[
+//            'class'=>'yii\debug\Module',
+//            'allowedIPs'=>['127.0.0.1', '::1','101.95.166.54']
+//        ],
         'admin'=>[
             'class'=>'mdm\admin\Module'
         ]
