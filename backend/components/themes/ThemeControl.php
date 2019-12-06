@@ -14,6 +14,8 @@ class ThemeControl extends ActionFilter
 {
     public function init()
     {
+        echo 1;
+        exit();
         print_r(Yii::getAlias('@app'));
         exit();
         $switch=intval(Yii::$app->request->get('switch'));
