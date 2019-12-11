@@ -3,7 +3,7 @@
 namespace backend\models;
 
 use Yii;
-
+use yii\helpers\ArrayHelper;
 /**
  * This is the model class for table "tag".
  *
@@ -45,5 +45,11 @@ class Tag extends \yii\db\ActiveRecord
             'credate_at' => 'Credate At',
             'update_at' => 'Update At',
         ];
+    }
+
+
+    public static function dropDownList(){
+        $enums=static::find()->all();
+        return $enums?ArrayHelper::map($enums,'tag_id','tag_name'):[];
     }
 }

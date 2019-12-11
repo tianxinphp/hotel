@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use backend\models\Tag;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\SubHotel */
@@ -15,6 +16,8 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'sub_hotel_name')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'sub_hotel_code')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model,'tag')->checkboxList(Tag::dropDownList())?>
 
     <?= $form->field($model, 'credate_at')->textInput() ?>
 

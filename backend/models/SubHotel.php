@@ -15,6 +15,8 @@ use Yii;
  */
 class SubHotel extends \yii\db\ActiveRecord
 {
+    public $tag;
+
     /**
      * {@inheritdoc}
      */
@@ -29,7 +31,7 @@ class SubHotel extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['sub_hotel_name', 'sub_hotel_code', 'credate_at', 'update_at'], 'required'],
+            [['sub_hotel_name', 'sub_hotel_code', 'credate_at', 'update_at','tag'], 'required'],
             [['credate_at', 'update_at'], 'integer'],
             [['sub_hotel_name'], 'string', 'max' => 50],
             [['sub_hotel_code'], 'string', 'max' => 20],
@@ -47,6 +49,7 @@ class SubHotel extends \yii\db\ActiveRecord
             'sub_hotel_code' => 'Sub Hotel Code',
             'credate_at' => 'Credate At',
             'update_at' => 'Update At',
+            'tag' => '标签'
         ];
     }
 }
