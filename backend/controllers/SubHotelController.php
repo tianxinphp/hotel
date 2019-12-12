@@ -105,7 +105,7 @@ class SubHotelController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-
+        $model->tag=HotelTag::getTagBySubHotel($id);
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->sub_hotel_id]);
         }
