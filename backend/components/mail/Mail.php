@@ -8,10 +8,15 @@
 
 namespace backend\components\mail;
 
-
+use Yii;
 class Mail
 {
     public function sendMail($event){
-        print_r($event);
+        $mail=Yii::$app->mailer->compose();
+        $mail->setTo($event->email);
+        $mail->setSubject($event->subject);
+        $mail->setTextBody($event->text);
+        $mail->setHtmlBody($event->html);
+        $mail->send();
     }
 }

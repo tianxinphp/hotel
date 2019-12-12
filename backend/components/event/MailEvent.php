@@ -17,6 +17,8 @@ class MailEvent extends Event
 
     public $subject;
 
-    public $content;
+    public $text;
+
+    public $html;
 
 }
