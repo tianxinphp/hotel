@@ -25,4 +25,9 @@ class EventTestController extends Controller
         exit();
     }
 
+    public function actionIndex()
+    {
+        $this->trigger(self::EVENT_TEST);
+    }
+
 }
