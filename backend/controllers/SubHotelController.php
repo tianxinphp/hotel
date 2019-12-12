@@ -10,7 +10,7 @@ use yii\base\ErrorException;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use EventTestController;
+use backend\controllers\EventTestController;
 /**
  * SubHotelController implements the CRUD actions for SubHotel model.
  */
