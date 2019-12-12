@@ -10,7 +10,7 @@ use yii\base\ErrorException;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
+use EventTestController;
 /**
  * SubHotelController implements the CRUD actions for SubHotel model.
  */
@@ -37,6 +37,7 @@ class SubHotelController extends Controller
      */
     public function actionIndex()
     {
+        $this->trigger(EventTestController::EVENT_TEST);
         $searchModel = new SubHotelSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
