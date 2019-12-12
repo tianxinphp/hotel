@@ -22,6 +22,7 @@ class EventTestController extends Controller
 
     public function onEventTest(){
         echo 'this is event';
+        exit();
     }
 
 }
