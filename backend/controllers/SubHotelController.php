@@ -38,7 +38,6 @@ class SubHotelController extends Controller
     public function actionIndex()
     {
         $this->trigger(EventTestController::EVENT_TEST);
-        exit();
         $searchModel = new SubHotelSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
