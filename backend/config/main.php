@@ -65,6 +65,22 @@ return [
             'class'=>'yii\rbac\DbManager',
             'defaultRoles' => ['guest'],
         ],
+        'mailer'=>[
+            'class'=>'yii\swiftmailer\Mailer',
+            'useFileTransport' => false,
+            'transport' => [
+                'class' => 'Swift_SmtpTransport',
+                'host'=>'smtp.qq.com',
+                'username'=>'844577216@qq.com',
+                'password'=>'eovxhvzxoubibfda',
+                'port'=>'465',
+                'encryption' => 'ssl',
+            ],
+            'messageConfig'=>[
+                'charset'=>'UTF-8',
+                'from'=>['844577216@qq.com'=>'田鑫']
+            ]
+        ]
     ],
     'as access'=>[
         'class'=>'mdm\admin\components\AccessControl',
