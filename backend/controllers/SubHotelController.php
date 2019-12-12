@@ -2,9 +2,11 @@
 
 namespace backend\controllers;
 
+use backend\models\HotelTag;
 use Yii;
 use backend\models\SubHotel;
 use backend\models\SubHotelSearch;
+use yii\base\ErrorException;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -66,13 +68,31 @@ class SubHotelController extends Controller
     {
         $model = new SubHotel();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->sub_hotel_id]);
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            $transaction =Yii::$app->db->beginTransaction();
+            try{
+                $model->save(false);
+                $subHotelId=$model->sub_hotel_id;
+                $data=[];
+                foreach ($model->tag as $key => $tagId){
+                    $data[]=[$subHotelId,$tagId];
+                }
+                $hotelTag=new HotelTag;
+                $attributes=['sub_hotel_id','tag_id'];
+                $tableName=$hotelTag::tableName();
+                $db=$hotelTag::getDb();
+                $db->createCommand()->batchInsert($tableName,$attributes,$data)->execute();
+                $transaction->commit();
+                return $this->redirect(['index']);
+            }catch (ErrorException $e){
+                $transaction->rollBack();
+                throw $e;
+            }
+        }else{
+            return $this->render('create', [
+                'model' => $model,
+            ]);
         }
-
-        return $this->render('create', [
-            'model' => $model,
-        ]);
     }
 
     /**
