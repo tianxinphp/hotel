@@ -125,7 +125,7 @@ class SubHotelController extends Controller
                 $transaction->rollBack();
                 throw $e;
             }
-//            return $this->redirect(['index']);
+            return $this->redirect(['update','id'=>$subHotelId]);
         }else{
             $model->tag=HotelTag::getTagBySubHotel($id);
             return $this->render('update', [
