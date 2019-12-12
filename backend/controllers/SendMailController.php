@@ -23,7 +23,7 @@ class SendMailController extends Controller
     public function actionIndex()
     {
         $event=new MailEvent;
-        $event->email = 'wo844577216@gmail.com';
+        $event->email = 'tstack.tian@huamin.com.hk';
         $event->subject = '事件邮件测试';
         $event->text = 'text';
         $event->html = 'html';
