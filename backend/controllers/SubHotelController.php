@@ -45,6 +45,13 @@ class SubHotelController extends Controller
         ]);
     }
 
+    public function actionSendMail()
+    {
+        $this->on(SendMailController::SEND_MAIL,['backend\components\mail\Mail','sendMail']);
+        $mailer=new SendMailController;
+        $mailer->send();
+    }
+
     /**
      * Displays a single SubHotel model.
      * @param integer $id
