@@ -17,7 +17,7 @@ class SendMailController extends Controller
     public function init()
     {
         parent::init();
-        $this->on(self::SEND_MAIL,['backend\components\mail\Mail','sendMail']);
+//        $this->on(self::SEND_MAIL,['backend\components\mail\Mail','sendMail']);
     }
 
     public function actionIndex()
