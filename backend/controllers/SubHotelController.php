@@ -10,7 +10,6 @@ use yii\base\ErrorException;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use backend\controllers\SendMailController;
 /**
  * SubHotelController implements the CRUD actions for SubHotel model.
  */
@@ -44,13 +43,6 @@ class SubHotelController extends Controller
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
-    }
-
-    public function actionSendMail()
-    {
-        $this->on(SendMailController::SEND_MAIL,['backend\components\mail\Mail','sendMail']);
-        $mailer=new SendMailController('send-mail',$this->module);
-        $mailer->actionSend();
     }
 
     /**

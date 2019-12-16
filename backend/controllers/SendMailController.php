@@ -17,18 +17,16 @@ class SendMailController extends Controller
     public function init()
     {
         parent::init();
-//        $this->on(self::SEND_MAIL,['backend\components\mail\Mail','sendMail']);
+        $this->on(self::SEND_MAIL,['backend\components\mail\Mail','sendMail']);
     }
 
     public  function actionSend()
     {
         $event=new MailEvent;
-        $event->email = 'tstack.tian@huamin.com.hk';
+        $event->email = 'wo844577216@gmail.com';
         $event->subject = '事件邮件测试';
         $event->text = 'text';
         $event->html = 'html';
-        echo 2;
-        exit();
         $this->trigger(self::SEND_MAIL,$event);
     }
 }
