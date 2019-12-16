@@ -10,6 +10,7 @@ use yii\base\ErrorException;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use backend\components\event\MailEvent;
 /**
  * SubHotelController implements the CRUD actions for SubHotel model.
  */
@@ -43,6 +44,17 @@ class SubHotelController extends Controller
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
+    }
+
+    public function actionSend()
+    {
+        Yii::$app->on('mail',['backend\components\mail\Mail','sendMail']);
+        $event=new MailEvent;
+        $event->email = 'wo844577216@gmail.com';
+        $event->subject = '事件邮件测试';
+        $event->text = 'text';
+        $event->html = 'html';
+        Yii::$app->trigger('mail',$event);
     }
 
     /**
