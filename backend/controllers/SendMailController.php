@@ -20,7 +20,7 @@ class SendMailController extends Controller
 //        $this->on(self::SEND_MAIL,['backend\components\mail\Mail','sendMail']);
     }
 
-    public  function send()
+    public  function actionSend()
     {
         $event=new MailEvent;
         $event->email = 'tstack.tian@huamin.com.hk';

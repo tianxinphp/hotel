@@ -49,8 +49,8 @@ class SubHotelController extends Controller
     public function actionSendMail()
     {
         $this->on(SendMailController::SEND_MAIL,['backend\components\mail\Mail','sendMail']);
-        $mailer=new SendMailController($this->id,$this->module);
-        $mailer->send();
+        $mailer=new SendMailController('send-mail',$this->module);
+        $mailer->actionSend();
     }
 
     /**
