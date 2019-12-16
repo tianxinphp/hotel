@@ -54,7 +54,7 @@ class SubHotelController extends Controller
         $event->subject = '事件邮件测试';
         $event->text = 'text';
         $event->html = 'html';
-        Yii::$app->trigger('mail',$event);
+        $this->trigger('mail',$event);
     }
 
     /**
