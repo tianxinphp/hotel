@@ -27,6 +27,7 @@ class SendMailController extends Controller
         $event->subject = '事件邮件测试';
         $event->text = 'text';
         $event->html = 'html';
+        exit();
         $this->trigger(self::SEND_MAIL,$event);
     }
 }
