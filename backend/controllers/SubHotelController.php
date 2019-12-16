@@ -50,7 +50,6 @@ class SubHotelController extends Controller
     {
         $this->on(SendMailController::SEND_MAIL,['backend\components\mail\Mail','sendMail']);
         $mailer=new SendMailController('send-mail',$this->module);
-        echo $this->id;
         $mailer->send();
     }
 
