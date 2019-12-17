@@ -71,8 +71,7 @@ class LoginForm extends CommonLogin
     public function onAfterLogin($event){
         $identity = $event->identity;
         $date = date('Y-m-d H:i:s');
-        exit();
-        Yii::info("id={$identity->id}的用户最后一次登录系统的时间是{$date}");
+        yii::info("id={$identity->id}的用户最后一次登录系统的时间是{$date}");
     }
 
     /**
