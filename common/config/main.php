@@ -13,7 +13,6 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                '/sub-hotel/' => '/hotel-tag/',
             ],
         ],
     ],
