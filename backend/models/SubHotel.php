@@ -31,7 +31,7 @@ class SubHotel extends \yii\db\ActiveRecord
         $this->on(self::EVENT_AFTER_FIND,[$this,'onAfterFind']);
     }
 
-    private function onAfterFind($event){
+    public function onAfterFind($event){
         yii::info('这是查询后event');
     }
 
