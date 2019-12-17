@@ -3,10 +3,11 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
+use backend\assets\SubHotelAsset;
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\SubHotelSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
-
+SubHotelAsset::register($this);
 $this->title = 'Sub Hotels';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
