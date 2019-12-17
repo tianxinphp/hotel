@@ -50,7 +50,7 @@ return [
             'name' => 'advanced-backend',
         ],
         'log' => [
-            'traceLevel' => YII_DEBUG ? 3 : 0,
+            'traceLevel' => YII_DEBUG ? 0: 3,
             'targets' => [
                 [
                     'class' => 'yii\log\FileTarget',
