@@ -60,19 +60,12 @@ class LoginForm extends CommonLogin
     public function login()
     {
         if ($this->validate()) {
-            Yii::$app->user->on(yii\web\User::EVENT_AFTER_LOGIN, [$this, 'onAfterLogin']);
             return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600 * 24 * 30 : 0);
         }
 
         return false;
     }
 
-
-    public function onAfterLogin($event){
-        $identity = $event->identity;
-        $date = date('Y-m-d H:i:s');
-        yii::info("id={$identity->id}的用户最后一次登录系统的时间是{$date}");
-    }
 
     /**
      * Finds user by [[username]]
