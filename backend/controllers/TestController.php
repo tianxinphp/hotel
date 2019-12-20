@@ -140,5 +140,6 @@ class TestController extends Controller
         $model=new Test;
         $model->age=$age;
         echo  $model->age+3;
+        print_r(debug_backtrace());
     }
 }
