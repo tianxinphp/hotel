@@ -12,6 +12,7 @@ use Yii;
  */
 class Test extends \yii\db\ActiveRecord
 {
+    private $_age;
     /**
      * {@inheritdoc}
      */
@@ -41,4 +42,18 @@ class Test extends \yii\db\ActiveRecord
             'name' => 'Name',
         ];
     }
+
+    public function setAge($age){
+        $this->_age=$age;
+    }
+
+    public function getAge(){
+        return $this->_age;
+    }
+
+    public function __destruct()
+    {
+        echo $this->_age;
+    }
+
 }

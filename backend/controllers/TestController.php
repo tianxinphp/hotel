@@ -135,4 +135,9 @@ class TestController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+
+    public function actionAge($age){
+        $model=new Test;
+        $model->age=$age;
+    }
 }
