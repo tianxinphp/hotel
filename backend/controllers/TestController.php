@@ -138,6 +138,6 @@ class TestController extends Controller
 
     public function actionAge($age){
         $model=new Test;
-        $model->age=$age;
+        echo  $model->age;
     }
 }

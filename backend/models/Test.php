@@ -51,9 +51,4 @@ class Test extends \yii\db\ActiveRecord
         return $this->_age;
     }
 
-    public function __destruct()
-    {
-        echo $this->_age+1;
-    }
-
 }
