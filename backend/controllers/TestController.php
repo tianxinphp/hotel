@@ -140,7 +140,14 @@ class TestController extends Controller
 
     public function actionCompoment()
     {
-        echo Yii::$app->myComponent->pram1,Yii::$app->myComponent->Pram2,Yii::$app->myComponent->name,Yii::$app->myComponent->enable;
+//        echo Yii::$app->myComponent->pram1,Yii::$app->myComponent->Pram2,Yii::$app->myComponent->name,Yii::$app->myComponent->enable;
 //        echo Yii::$app->myComponent->Pram1,Yii::$app->myComponent->Pram2,Yii::$app->myComponent->name,Yii::$app->myComponent->enable;
+        $com=Yii::createObject([
+            'class'=>'backend\components\MyComponent',
+            'Pram1'=>3,
+            'Pram2'=>4,
+        ]);
+
+        echo $com->Pram1,$com->Pram2;
     }
 }

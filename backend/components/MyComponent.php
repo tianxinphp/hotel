@@ -15,21 +15,13 @@ class MyComponent extends  Component
 
     public $enable=true;
 
-    private $pram1;
+    private $_pram1;
 
     private $_pram2;
 
 
-    /**
-     * MyComponent constructor.
-     * @param array $pram1
-     * @param $pram2
-     * @param array $config
-     */
-    public function __construct($pram1,$pram2,array $config = [])
+    public function __construct(array $config = [])
     {
-        $this->pram1=$pram1;
-        $this->pram2=$pram2;
         parent::__construct($config);
     }
 
