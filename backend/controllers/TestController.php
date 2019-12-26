@@ -140,8 +140,6 @@ class TestController extends Controller
 
     public function actionCompoment()
     {
-        print_r(Yii::$app->myComponent);
-        exit();
         echo Yii::$app->myComponent->Pram1;
     }
 }
