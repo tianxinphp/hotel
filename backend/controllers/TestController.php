@@ -148,7 +148,7 @@ class TestController extends Controller
 //            'Pram2'=>4,
 //        ]);
 
-        Yii::$app->MyComponent->trigger(MyComponent::EVENT_START);
+        Yii::$app->myComponent->trigger(MyComponent::EVENT_START);
 
         echo Yii::$app->myComponent->pram2;
     }
