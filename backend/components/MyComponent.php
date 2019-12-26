@@ -51,8 +51,8 @@ class MyComponent extends  Component
         $this->_pram1=$pram1;
     }
 
-    private function handleStart(){
-        $this->pram2=3;
+    private static function handleStart(){
+        self::setPram2(3);
     }
 
     private static function handleEnd(){
