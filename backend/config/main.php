@@ -65,6 +65,7 @@ return [
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
+            'maxSourceLines' => 50,
         ],
         'authManager'=>[
             'class'=>'yii\rbac\DbManager',
