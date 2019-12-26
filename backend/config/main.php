@@ -38,9 +38,8 @@ return [
     ],
     'components' => [
         'myComponent'=>[
-            'class'=>'backend\components\MyComponent',
-            'pram1'=>'1',
-            'pram2'=>'2'
+//            'class'=>'backend\components\MyComponent',
+            'class'=>new backend\components\MyComponent(1,2,[]),
         ],
         'request' => [
             'csrfParam' => '_csrf-backend',

@@ -19,8 +19,11 @@ class MyComponent extends  Component
 
     private $_pram2;
 
+
     /**
      * MyComponent constructor.
+     * @param array $pram1
+     * @param $pram2
      * @param array $config
      */
     public function __construct($pram1,$pram2,array $config = [])
