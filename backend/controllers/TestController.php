@@ -148,8 +148,8 @@ class TestController extends Controller
 //            'Pram1'=>3,
 //            'Pram2'=>4,
 //        ]);
+        Yii::$app->on(MyComponent::EVENT_START,['backend\components\MyComponent','handleStart']);
         Yii::$app->trigger(MyComponent::EVENT_START);
         Yii::$app->myComponent->Pram2;
-        echo 1;
     }
 }
