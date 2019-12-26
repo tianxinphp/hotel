@@ -138,8 +138,9 @@ class TestController extends Controller
         throw new NotFoundHttpException('The requested page does not exist.');
     }
 
-    public function actionConpoment()
+    public function actionCompoment()
     {
+        print_r(Yii::$app->myComponent);
         echo Yii::$app->myComponent->Pram1;
     }
 }
