@@ -8,6 +8,7 @@
 
 namespace backend\components;
 use yii\base\Component;
+use yii\base\Event;
 
 class MyComponent extends  Component
 {
@@ -59,4 +60,8 @@ class MyComponent extends  Component
         self::setPram2(4);
     }
 
+    public function trigger($name, Event $event = null)
+    {
+        parent::trigger($name, $event);
+    }
 }
