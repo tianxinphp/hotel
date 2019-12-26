@@ -148,6 +148,6 @@ class TestController extends Controller
             'Pram2'=>4,
         ]);
 
-        echo $com->Pram1,$com->Pram2;
+        echo Yii::$app->myComponent->Pram1,Yii::$app->myComponent->Pram2;
     }
 }
