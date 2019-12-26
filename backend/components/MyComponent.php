@@ -19,6 +19,9 @@ class MyComponent extends  Component
 
     private $_pram2;
 
+    const EVENT_START='event_start';
+
+    const EVENT_END='event_end';
 
     public function __construct(array $config = [])
     {
@@ -28,7 +31,8 @@ class MyComponent extends  Component
     public function init()
     {
         parent::init();
-        //..................
+        $this->on(self::EVENT_START,[$this,'handleStart']);
+        $this->on(self::EVENT_END,['backend\components\MyComponent','handleEnd']);
     }
 
     public function getPram2(){
@@ -46,4 +50,13 @@ class MyComponent extends  Component
     public function setPram1($pram1){
         $this->_pram1=$pram1;
     }
+
+    private function handleStart(){
+        $this->pram2=3;
+    }
+
+    private static function handleEnd(){
+        self::setPram2(4);
+    }
+
 }
