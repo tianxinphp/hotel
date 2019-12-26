@@ -37,6 +37,11 @@ return [
         '@mdm/admin'   => '@vendor/mdmsoft/yii2-admin'
     ],
     'components' => [
+        'myComponent'=>[
+            'class'=>'backend\components\MyComponent',
+            'pram1'=>'1',
+            'pram2'=>'2'
+        ],
         'request' => [
             'csrfParam' => '_csrf-backend',
         ],

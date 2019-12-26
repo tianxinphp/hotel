@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use foo\bar;
 use Yii;
 use backend\models\Test;
 use backend\models\TestSearch;
@@ -9,6 +10,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\helpers\Url;
+use backend\components\MyComponent;
 /**
  * TestController implements the CRUD actions for Test model.
  */
@@ -136,10 +138,8 @@ class TestController extends Controller
         throw new NotFoundHttpException('The requested page does not exist.');
     }
 
-    public function actionAge($age){
-        $model=new Test;
-        $model->age=$age;
-        echo  $model->age+3;
-        debug_print_backtrace();
+    public function actionConpoment()
+    {
+        echo Yii::$app->myComponent->Pram1;
     }
 }
