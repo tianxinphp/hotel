@@ -32,7 +32,7 @@ class MyComponent extends  Component
     public function init()
     {
         parent::init();
-        $this->on(self::EVENT_START,[$this,'handleStart']);
+        $this->on(self::EVENT_START,['backend\components\MyComponent','handleStart']);
         $this->on(self::EVENT_END,['backend\components\MyComponent','handleEnd']);
     }
 
@@ -52,16 +52,13 @@ class MyComponent extends  Component
         $this->_pram1=$pram1;
     }
 
-    public static function handleStart(){
+    public  function handleStart(){
         self::setPram2(3);
     }
 
-    public static function handleEnd(){
+    public  function handleEnd(){
         self::setPram2(4);
     }
 
-    public function trigger($name, Event $event = null)
-    {
-        parent::trigger($name, $event);
-    }
+
 }

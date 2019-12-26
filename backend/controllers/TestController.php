@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use backend\models\Tag;
 use foo\bar;
 use Yii;
 use backend\models\Test;
@@ -147,9 +148,7 @@ class TestController extends Controller
 //            'Pram1'=>3,
 //            'Pram2'=>4,
 //        ]);
-
-        Yii::$app->myComponent->trigger(MyComponent::EVENT_START);
-
-        echo Yii::$app->myComponent->pram2;
+        Yii::$app->trigger(MyComponent::EVENT_START);
+        Yii::$app->myComponent->Pram2;
     }
 }
