@@ -150,5 +150,6 @@ class TestController extends Controller
 //        ]);
         Yii::$app->trigger(MyComponent::EVENT_START);
         Yii::$app->myComponent->Pram2;
+        echo 1;
     }
 }
